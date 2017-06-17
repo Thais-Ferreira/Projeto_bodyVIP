@@ -1,0 +1,34 @@
+package br.com.body.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.body.entidade.Aluno;
+
+/**
+ * Classe 
+ * 
+ * @author Thaís
+ *
+ */
+public class AlunoDAO {
+	
+	private Connection conexao = Conexao.getConnection();
+	
+	public void cadastrarAluno(Aluno aluno) {
+		
+		String sql = "INSERT INTO ALUNO (nome,cpf,matricula,email,dataMatricula) VALUES (?,?,?,?,?)";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+	
+	
+
+}

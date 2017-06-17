@@ -1,0 +1,32 @@
+package br.com.body.teste;
+
+import java.sql.Date;
+import java.util.Calendar;
+
+import br.com.body.entidade.Aluno;
+import br.com.body.jdbc.AlunoDAO;
+
+public class TestDAO {
+
+	public static void main(String[] args) {
+		testCadastroAluno();
+
+	}
+	
+	public static void testCadastroAluno() {
+		Aluno aluno = new Aluno();
+		Date data = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+		
+		aluno.setNome("Yuna");
+		aluno.setCpf("89765421209");
+		aluno.setMatricula("928382912");
+		aluno.setEmail("yuna@gmail.com");
+		aluno.setDataMatricula(data);
+		
+		AlunoDAO alunoDAO = new AlunoDAO();
+		alunoDAO.cadastroAluno(aluno);
+		
+		
+	}
+
+}

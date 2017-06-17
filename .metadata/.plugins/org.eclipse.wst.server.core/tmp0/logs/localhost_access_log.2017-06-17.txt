@@ -1,0 +1,16 @@
+127.0.0.1 - - [17/Jun/2017:14:56:33 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:14:56:36 -0300] "GET /BodyVIP/cadastro.jsp HTTP/1.1" 200 605
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:14:57:42 -0300] "POST /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 500 2747
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:02:23 -0300] "POST /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 500 2735
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:03:26 -0300] "GET /BodyVIP/cadastro.jsp HTTP/1.1" 200 605
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:03:34 -0300] "POST /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 500 2735
+127.0.0.1 - - [17/Jun/2017:15:09:05 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:12:35 -0300] "GET /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 500 2406
+127.0.0.1 - - [17/Jun/2017:15:15:51 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:15:51 -0300] "GET /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 500 2406
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:17:47 -0300] "GET /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 500 2735
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:21:30 -0300] "GET /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 500 2735
+127.0.0.1 - - [17/Jun/2017:15:37:55 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:37:56 -0300] "GET /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 200 312
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:39:27 -0300] "GET /BodyVIP/cadastro.jsp HTTP/1.1" 200 605
+0:0:0:0:0:0:0:1 - - [17/Jun/2017:15:40:00 -0300] "POST /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 200 312

@@ -1,0 +1,13 @@
+1497709182120	Copy package
+1497709196821	Copy package
+1497709203670	Delete element
+1497709328700	Delete element
+1497709335296	Copy package
+1497709358794	Rename package 'br.com.body.teste.copy'
+1497711918035	Encapsulate field 'nome'
+1497711931525	Encapsulate field 'cpf'
+1497711938077	Encapsulate field 'matricula'
+1497711950825	Encapsulate field 'email'
+1497711955275	Encapsulate field 'dateMatricula'
+1497716082663	Encapsulate field 'id'
+1497716876190	Encapsulate field 'dataMatricula'

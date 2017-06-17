@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\Milk\Desktop\BodyVIP\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2794508609.index
+1563527831.index
+2541859689.index
+1917036087.index
+368650526.index
+1898104955.index
