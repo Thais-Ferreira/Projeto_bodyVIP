@@ -11,6 +11,7 @@
 <title>Página Salvar Cadastro</title>
 </head>
 <body>
+	<jsp:include page="cabecalho.jsp"></jsp:include>
 	<%
 	String nomeAluno = request.getParameter("nome");
 	String cpfAluno = request.getParameter("cpf");

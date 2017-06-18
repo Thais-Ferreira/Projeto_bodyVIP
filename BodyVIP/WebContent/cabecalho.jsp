@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Cabeçalho</title>
 </head>
 <body>
-
+	<a href="home.jsp">Home</a>
+	<a href="cadastro.jsp">Cadastro Aluno</a>
+	<a href="AlunoController">Lista de Alunos Matriculados</a>
 </body>
 </html>

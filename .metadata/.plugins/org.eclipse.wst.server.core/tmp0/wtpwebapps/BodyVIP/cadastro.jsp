@@ -7,6 +7,7 @@
 <title>Cadastro</title>
 </head>
 <body>
+	<jsp:include page="cabecalho.jsp"></jsp:include>
 	<form action="SalvoCadastro.jsp" method="post">
 		<label>Nome:</label>
 		<input type="text" name="nome">

@@ -10,7 +10,8 @@ import java.util.List;
 import br.com.body.entidade.Aluno;
 
 /**
- * Classe 
+ * Classe responsável por cadastrar, excluir, alterar e mostrar os dados de alunos através
+ * de uma connexão com o banco de dados.
  * 
  * @author Thaís
  *
@@ -19,6 +20,9 @@ public class AlunoDAO {
 	
 	private Connection conexao = Conexao.getConnection();
 	
+	/**
+	 * Método que cadastra um aluno no banco de dados.
+	 */
 	public void cadastroAluno(Aluno aluno) {
 		
 		String sql = "INSERT INTO aluno (nome,cpf,matricula,email,datamatricula) VALUES (?,?,?,?,?)";
@@ -42,6 +46,9 @@ public class AlunoDAO {
 		
 	}
 	
+	/**
+	 * Método que altera o cadastro de um aluno no banco de dados.
+	 */
 	public void alteraCadastroAluno(Aluno aluno) {
 		
 		String sql = "UPDATE aluno SET nome = ?, cpf = ?, matricula = ?, email = ? WHERE cpf = ?";
@@ -65,6 +72,9 @@ public class AlunoDAO {
 		
 	}
 	
+	/**
+	 * Método que deleta o cadastro de um aluno do banco de dados.
+	 */
 	public void deletaCadastroAluno(Aluno aluno) {
 		
 		String sql = "DELETE FROM aluno WHERE cpf = ?";
@@ -85,6 +95,9 @@ public class AlunoDAO {
 		
 	}
 	
+	/**
+	 * Método que retorna uma lista com os alunos cadastrados no banco de dados.
+	 */
 	public List<Aluno> buscaListaAlunos(Aluno aluno) {
 		
 		String sql = "SELECT * FROM aluno";

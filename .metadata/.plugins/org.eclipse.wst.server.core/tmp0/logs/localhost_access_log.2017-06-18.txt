@@ -1,0 +1,16 @@
+127.0.0.1 - - [18/Jun/2017:11:24:19 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:24:24 -0300] "GET /BodyVIP/cadastro.jsp HTTP/1.1" 200 998
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:24:28 -0300] "GET /BodyVIP/home.jsp HTTP/1.1" 200 682
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:24:32 -0300] "GET /BodyVIP/listaAlunos.jsp HTTP/1.1" 200 658
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:24:33 -0300] "GET /BodyVIP/cadastro.jsp HTTP/1.1" 200 998
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:24:34 -0300] "GET /BodyVIP/listaAlunos.jsp HTTP/1.1" 200 658
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:24:35 -0300] "GET /BodyVIP/cadastro.jsp HTTP/1.1" 200 998
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:31:04 -0300] "POST /BodyVIP/SalvoCadastro.jsp HTTP/1.1" 200 705
+127.0.0.1 - - [18/Jun/2017:11:49:30 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:49:33 -0300] "GET /BodyVIP/home.jsp HTTP/1.1" 200 682
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:49:35 -0300] "GET /BodyVIP/cadastro.jsp HTTP/1.1" 200 998
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:49:38 -0300] "GET /BodyVIP/AlunoController HTTP/1.1" 200 663
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:50:28 -0300] "GET /BodyVIP/home.jsp HTTP/1.1" 200 682
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:11:50:30 -0300] "GET /BodyVIP/AlunoController HTTP/1.1" 200 1101
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:12:00:49 -0300] "GET /BodyVIP/home.jsp HTTP/1.1" 200 682
+0:0:0:0:0:0:0:1 - - [18/Jun/2017:12:00:51 -0300] "GET /BodyVIP/AlunoController HTTP/1.1" 200 1448
