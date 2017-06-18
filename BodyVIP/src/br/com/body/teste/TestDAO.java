@@ -7,6 +7,12 @@ import java.util.List;
 import br.com.body.entidade.Aluno;
 import br.com.body.jdbc.AlunoDAO;
 
+/**
+ * Classe para testar os métodos da classe AlunoDAO.
+ * 
+ * @author Thaís
+ *
+ */
 public class TestDAO {
 
 	public static void main(String[] args) {
@@ -37,10 +43,8 @@ public class TestDAO {
 		Aluno aluno = new Aluno();
 		
 		aluno.setNome("Yuna");
-		aluno.setCpf("89765421209");
-		aluno.setMatricula("928382");
 		aluno.setEmail("yuna@gmail.com");
-		aluno.setCpf("11111111111");
+		aluno.setMatricula("928382");
 		
 		AlunoDAO alunoDAO = new AlunoDAO();
 		alunoDAO.alteraCadastroAluno(aluno);
@@ -50,7 +54,7 @@ public class TestDAO {
 	public static void testDeletaCadastroAluno() {
 		Aluno aluno = new Aluno();
 		
-		aluno.setCpf("89765421209");
+		aluno.setMatricula("xxxxxxx");
 		
 		AlunoDAO alunoDAO = new AlunoDAO();
 		alunoDAO.deletaCadastroAluno(aluno);

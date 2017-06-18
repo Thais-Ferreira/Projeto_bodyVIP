@@ -18,17 +18,21 @@
 	%>
 	<table border="1">
 		<tr bgcolor="#eaeaea">
-			<td>Nome</td>
-			<td>Matrícula</td>
-			<td>E-mail</td>
+			<th>Nome</th>
+			<th>Matrícula</th>
+			<th>E-mail</th>
+			<th>Deletar</th>
+			<th>Alterar</th>
 		</tr>
 	<%
 	for(Aluno a:listaCompleta) {
 	%>
 	<tr>
-			<td><%= a.getNome() %></td>
-			<td><%= a.getMatricula() %></td>
-			<td><%= a.getEmail() %></td>
+			<th><%= a.getNome() %></th>
+			<th><%= a.getMatricula() %></th>
+			<th><%= a.getEmail() %></th>
+			<th><a href="AlunoController?acao=deletaCadastro&matricula=<%= a.getMatricula() %>">Deletar</a></th>
+			<th><a href="AlunoController?acao=alteraCadastro&matricula=<%= a.getMatricula() %>">Alterar</a></th>
 		</tr>
 	<%
 	}

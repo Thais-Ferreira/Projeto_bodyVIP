@@ -1,6 +1,7 @@
 package br.com.body.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -34,20 +35,59 @@ public class AlunoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Aluno aluno = new Aluno();
+		String acao = request.getParameter("acao");
 		AlunoDAO alunoDAO = new AlunoDAO();
-		List<Aluno> listaAlunos = alunoDAO.buscaListaAlunos(aluno);
 		
-		request.setAttribute("listaAlunos", listaAlunos);
-		RequestDispatcher destino = request.getRequestDispatcher("listaAlunos.jsp");
-		destino.forward(request, response);
+		if(acao != null && acao.equals("buscaLista")) {
+			List<Aluno> listaAlunos = alunoDAO.buscaListaAlunos(aluno);
+			
+			request.setAttribute("listaAlunos", listaAlunos);
+			RequestDispatcher destino = request.getRequestDispatcher("listaAlunos.jsp");
+			destino.forward(request, response);
+			
+		} else if(acao != null && acao.equals("deletaCadastro")) {
+			String matricula = request.getParameter("matricula");
+			aluno.setMatricula(matricula);
+			alunoDAO.deletaCadastroAluno(aluno);
+			
+			response.sendRedirect("AlunoController?acao=buscaLista");
+			
+		} else if(acao != null && acao.endsWith("alteraCadastro")) {
+			String matricula = request.getParameter("matricula");
+			Aluno alu = alunoDAO.buscaAluno(matricula);
+			request.setAttribute("alu", alu);
+			request.getRequestDispatcher("AlterarCadastro.jsp").forward(request, response);
+			
+		} else if(acao != null && acao.endsWith("cadastro")) {
+			RequestDispatcher destino = request.getRequestDispatcher("cadastro.jsp");
+			destino.forward(request, response);
+		}
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//capturando parâmetros da tela
+		String nome = request.getParameter("nome");
+		String matricula = request.getParameter("matricula");
+		String email = request.getParameter("email");
+		
+		//criando objeto aluno e atribuindo valores da tela
+		Aluno aluno = new Aluno();
+		aluno.setNome(nome);
+		aluno.setEmail(email);
+		aluno.setMatricula(matricula);
+		
+		//criando um alunoDAO
+		AlunoDAO alunoDAO = new AlunoDAO();
+		
+		//salvando no banco de dados
+		alunoDAO.alteraCadastroAluno(aluno);
+		//PrintWriter out = response.getWriter();
+		//out.println("Salvo!");
+		response.sendRedirect("AlunoController?acao=buscaLista");
 	}
 
 }

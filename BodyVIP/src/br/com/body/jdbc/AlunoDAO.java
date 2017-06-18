@@ -51,16 +51,14 @@ public class AlunoDAO {
 	 */
 	public void alteraCadastroAluno(Aluno aluno) {
 		
-		String sql = "UPDATE aluno SET nome = ?, cpf = ?, matricula = ?, email = ? WHERE cpf = ?";
+		String sql = "UPDATE aluno SET nome = ?, email = ? WHERE matricula = ?";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			
 			preparador.setString(1, aluno.getNome());
-			preparador.setString(2, aluno.getCpf());
+			preparador.setString(2, aluno.getEmail());
 			preparador.setString(3, aluno.getMatricula());
-			preparador.setString(4, aluno.getEmail());
-			preparador.setString(5, aluno.getCpf());
 			
 			preparador.execute();
 			preparador.close();
@@ -77,12 +75,12 @@ public class AlunoDAO {
 	 */
 	public void deletaCadastroAluno(Aluno aluno) {
 		
-		String sql = "DELETE FROM aluno WHERE cpf = ?";
+		String sql = "DELETE FROM aluno WHERE matricula = ?";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			
-			preparador.setString(1, aluno.getCpf());
+			preparador.setString(1, aluno.getMatricula());
 			
 			
 			preparador.execute();
@@ -125,6 +123,31 @@ public class AlunoDAO {
 		
 		return listaAlunos;
 		
+	}
+	
+	public Aluno buscaAluno(String matricula) {
+		Aluno aluno = null;
+		String sql = "SELECT * FROM aluno WHERE matricula = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			preparador.setString(1, matricula);
+			
+			ResultSet resultado = preparador.executeQuery();
+			if(resultado.next()) {
+				aluno = new Aluno();
+				aluno.setId(resultado.getInt("id"));
+				aluno.setNome(resultado.getString("nome"));
+				aluno.setCpf(resultado.getString("cpf"));
+				aluno.setMatricula(resultado.getString("matricula"));
+				aluno.setEmail(resultado.getString("email"));
+			}
+			System.out.println("Aluno encontrado com sucesso!");
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+		return aluno;
 	}
 	
 }
