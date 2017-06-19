@@ -24,8 +24,8 @@
           <li class="selected"><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
           <li><a href="AlunoController?acao=buscaLista">Listar Alunos</a></li>
           <li><a href="page.html">Turmas</a></li>
-          <li><a href="another_page.html">Professores</a></li>
-          <li><a href="contact.html">Login</a></li>
+          <li><a href="another_page.html">Cadastrar Professor</a></li>
+          <li><a href="contact.html">Listar Professores</a></li>
         </ul>
       </div>
     </div>
@@ -45,7 +45,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Listar Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="contact.html">Login</a></p>
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Listar Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="contact.html">Listar Professores</a></p>
       <p>@BodyVIP 2010 todos os direitos reservados.</p> 
     </div>
     </div>

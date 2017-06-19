@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<title>Home</title>
+</head>
+<body>
+	<div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="home.jsp">Body<span class="logo_colour">VIP</span></a></h1>
+          <h2>Enfrente a preguiça, derrote o cansaço e supere os desafios.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="home.jsp">Home</a></li>
+          <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
+          <li><a href="AlunoController?acao=buscaLista">Listar Alunos</a></li>
+          <li><a href="page.html">Turmas</a></li>
+          <li><a href="another_page.html">Professores</a></li>
+          <li><a href="contact.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="banner"></div>
+	  
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Bem vindo(a) a academia BodyVIP!</h1>
+        <p>Inaugurada em 2010, a academia BodyVIP conta com mais de 250 unidades, localizadas em 22 estados brasileiros 
+        e no Distrito Federal, além de presença no Chile, México, República Dominicana, Peru e Colômbia. 
+        A rede foi criada com o propósito de democratizar o fitness de alto padrão e oferece planos 
+        a partir de R$ 59,90 mensais, no Brasil.
+		</p>
+        <h1>Confira a estrutura de nossas academias!</h1>
+        <p>- Todas as unidades possuem vestiários com armários.</p>
+        <p>- Todas as unidades possuem chuveiros exceto as unidades Leblon, Miguel de Frias e Cambuí.</p>
+        <p>- Na página de cada unidade é possível verificar a disponibilidade de bicicletários. </p>
+        <p>- Para saber se existe disponibilidade para estacionamento, basta acessar a página na unidade de 
+        interesse. Lá informa se a unidade possui ou não estacionamento e se ele é gratuito ou conveniado. </p>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Listar Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="contact.html">Login</a></p>
+      <p>@BodyVIP 2010 todos os direitos reservados.</p> 
+    </div>
+  </div>
+</body>
+</html>

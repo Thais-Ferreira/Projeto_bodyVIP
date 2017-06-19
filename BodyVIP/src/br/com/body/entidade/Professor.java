@@ -13,6 +13,7 @@ public class Professor {
 	private Integer id;
 	private String nome;
 	private String cpf;
+	private String email;
 	private Date dataContratacao;
 	
 	public Integer getId() {
@@ -38,6 +39,14 @@ public class Professor {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Date getDataContratacao() {
 		return dataContratacao;
@@ -46,6 +55,5 @@ public class Professor {
 	public void setDataContratacao(Date dataContratacao) {
 		this.dataContratacao = dataContratacao;
 	}
-	
 
 }

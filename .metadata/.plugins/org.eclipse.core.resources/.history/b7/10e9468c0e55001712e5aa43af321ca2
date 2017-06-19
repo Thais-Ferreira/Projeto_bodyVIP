@@ -1,0 +1,76 @@
+<%@page import="br.com.body.entidade.Aluno"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<title>Alunos Cadastrados</title>
+</head>
+<body>
+	<div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="home.jsp">Body<span class="logo_colour">VIP</span></a></h1>
+          <h2>Enfrente a preguiça, derrote o cansaço e supere os desafios.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="home.jsp">Home</a></li>
+          <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
+          <li class="selected"><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
+          <li><a href="page.html">Turmas</a></li>
+          <li><a href="another_page.html">Cadastrar Professor</a></li>
+          <li><a href="contact.html">Ver Professores</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+    <h1>Lista de Alunos Matriculados</h1>
+    </div>
+    </div>
+</body>
+	<%
+	//List<Aluno> listaAlunos = alunoDAO.buscaListaAlunos(aluno);
+	
+	List<Aluno> listaCompleta = (List<Aluno>)request.getAttribute("listaAlunos");
+	%>
+	<div id="site_content">
+	<table  bgcolor="#E7746F">
+		<tr>
+			<th>NOME</th>
+			<th>MATRÍCULA</th>
+			<th>E-MAIL</th>
+			<th>DELETAR</th>
+			<th>ALTERAR</th>
+		</tr>
+	<%
+	for(Aluno a:listaCompleta) {
+	%>
+	<tr>
+			<th><%= a.getNome() %></th>
+			<th><%= a.getMatricula() %></th>
+			<th><%= a.getEmail() %></th>
+			<th><a href="AlunoController?acao=deletaCadastro&matricula=<%= a.getMatricula() %>">Deletar</a></th>
+			<th><a href="AlunoController?acao=alteraCadastro&matricula=<%= a.getMatricula() %>">Alterar</a></th>
+	</tr>
+	<%
+	}
+	%>
+	</table>
+	</div>
+	
+	<div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="contact.html">Ver Professores</a></p>
+      <p>@BodyVIP 2010 todos os direitos reservados.</p> 
+    </div>
+    
+</html>

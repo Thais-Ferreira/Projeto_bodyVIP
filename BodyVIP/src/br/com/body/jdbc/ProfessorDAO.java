@@ -10,8 +10,8 @@ import java.util.List;
 import br.com.body.entidade.Professor;
 
 /**
- * Classe responsável por cadastrar, excluir, alterar e mostrar os dados de alunos através
- * de uma connexão com o banco de dados.
+ * Classe responsável por cadastrar, excluir, alterar e mostrar os dados de professores através
+ * de uma conexão com o banco de dados.
  * 
  * @author Thaís
  *
@@ -25,14 +25,15 @@ public class ProfessorDAO {
 	 */
 	public void cadastroProfessor(Professor professor) {
 		
-		String sql = "INSERT INTO professor (nome,cpf,datacontratacao) VALUES (?,?,?)";
+		String sql = "INSERT INTO professor (nome,cpf,email,datacontratacao) VALUES (?,?,?,?)";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			
 			preparador.setString(1, professor.getNome());
 			preparador.setString(2, professor.getCpf());
-			preparador.setDate(3, professor.getDataContratacao());
+			preparador.setString(3, professor.getEmail());
+			preparador.setDate(4, professor.getDataContratacao());
 			
 			preparador.execute();
 			preparador.close();
@@ -42,10 +43,34 @@ public class ProfessorDAO {
 			System.out.println("Erro - " + e.getMessage());
 		}
 	}
+	
+	/**
+	 * Método que altera o cadastro de um professor no banco de dados.
+	 */
+	public void alteraCadastroProfessor(Professor professor) {
 		
-		/**
-		 * Método que deleta o cadastro de um professor do banco de dados.
-		 */
+		String sql = "UPDATE professor SET nome = ?, email = ? WHERE cpf = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, professor.getNome());
+			preparador.setString(2, professor.getEmail());
+			preparador.setString(3, professor.getCpf());
+			
+			preparador.execute();
+			preparador.close();
+			
+			System.out.println("Cadastro alterado com sucesso!");
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+		
+	/**
+	* Método que deleta o cadastro de um professor do banco de dados.
+	*/
 	public void deletaCadastroProfessor(Professor professor) {
 			
 		String sql = "DELETE FROM professor WHERE cpf = ?";
@@ -83,6 +108,7 @@ public class ProfessorDAO {
 				prof.setId(resultados.getInt("id"));
 				prof.setNome(resultados.getString("nome"));
 				prof.setCpf(resultados.getString("cpf"));
+				prof.setEmail(resultados.getString("email"));
 				prof.setDataContratacao(resultados.getDate("datacontratacao"));
 					
 				listaProfessores.add(prof);
@@ -113,6 +139,7 @@ public class ProfessorDAO {
 				professor.setId(resultado.getInt("id"));
 				professor.setNome(resultado.getString("nome"));
 				professor.setCpf(resultado.getString("cpf"));
+				professor.setEmail(resultado.getString("email"));
 				
 			}
 			System.out.println("Professor encontrado com sucesso!");

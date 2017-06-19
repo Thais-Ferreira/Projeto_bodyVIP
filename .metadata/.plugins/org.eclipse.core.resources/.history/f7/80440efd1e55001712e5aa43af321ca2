@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Cadastro Salvo</title>
+</head>
+<body>
+	<jsp:include page="cabecalho.jsp"></jsp:include>
+	<%
+	String nomeAluno = request.getParameter("nome");
+	String cpfAluno = request.getParameter("cpf");
+	String matriculaAluno = request.getParameter("matricula");
+	String emailAluno = request.getParameter("email");
+	Date data = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+	
+	Aluno aluno = new Aluno();
+	aluno.setNome(nomeAluno);
+	aluno.setCpf(cpfAluno);
+	aluno.setMatricula(matriculaAluno);
+	aluno.setEmail(emailAluno);
+	aluno.setDataMatricula(data);
+	
+	AlunoDAO alunoDAO = new AlunoDAO();
+	alunoDAO.cadastroAluno(aluno);
+	%>
+	
+	<h1>Salvo com sucesso!</h1>
+
+</body>
+</html>

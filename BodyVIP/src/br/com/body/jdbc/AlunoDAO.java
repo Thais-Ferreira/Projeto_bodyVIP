@@ -11,7 +11,7 @@ import br.com.body.entidade.Aluno;
 
 /**
  * Classe responsável por cadastrar, excluir, alterar e mostrar os dados de alunos através
- * de uma connexão com o banco de dados.
+ * de uma conexão com o banco de dados.
  * 
  * @author Thaís
  *

@@ -60,7 +60,7 @@ public class AlunoController extends HttpServlet {
 			request.getRequestDispatcher("AlterarCadastro.jsp").forward(request, response);
 			
 		} else if(acao != null && acao.endsWith("cadastro")) {
-			RequestDispatcher destino = request.getRequestDispatcher("cadastro.jsp");
+			RequestDispatcher destino = request.getRequestDispatcher("cadastroAluno.jsp");
 			destino.forward(request, response);
 		}
 		
@@ -86,8 +86,6 @@ public class AlunoController extends HttpServlet {
 		
 		//salvando no banco de dados
 		alunoDAO.alteraCadastroAluno(aluno);
-		//PrintWriter out = response.getWriter();
-		//out.println("Salvo!");
 		response.sendRedirect("AlunoController?acao=buscaLista");
 	}
 

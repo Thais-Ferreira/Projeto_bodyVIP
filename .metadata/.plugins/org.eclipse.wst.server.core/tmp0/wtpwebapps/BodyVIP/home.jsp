@@ -22,10 +22,10 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="home.jsp">Home</a></li>
           <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
-          <li><a href="AlunoController?acao=buscaLista">Listar Alunos</a></li>
+          <li><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
           <li><a href="page.html">Turmas</a></li>
-          <li><a href="another_page.html">Professores</a></li>
-          <li><a href="contact.html">Login</a></li>
+          <li><a href="ProfessorController?acao=cadastro">Cadastrar Professor</a></li>
+          <li><a href="ProfessorController?acao=buscaLista">Ver Professores</a></li>
         </ul>
       </div>
     </div>
@@ -51,7 +51,7 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Listar Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="contact.html">Login</a></p>
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>
       <p>@BodyVIP 2010 todos os direitos reservados.</p> 
     </div>
   </div>

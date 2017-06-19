@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Página Salvar Cadastro</title>
+<title>Cadastro Salvo</title>
 </head>
 <body>
 	<jsp:include page="cabecalho.jsp"></jsp:include>

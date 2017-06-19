@@ -19,3 +19,6 @@
 1497882593464	Encapsulate field 'nome'
 1497882604702	Encapsulate field 'cpf'
 1497882611594	Encapsulate field 'dataContratacao'
+1497889585091	Rename resource 'cadastro.jsp'
+1497897592923	Rename resource 'SalvoCadastro.jsp'
+1497897806906	Encapsulate field 'email'
