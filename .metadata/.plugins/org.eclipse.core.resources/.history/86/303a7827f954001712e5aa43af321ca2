@@ -1,0 +1,11 @@
+package br.com.body.entidade;
+
+/**
+ * Classe que representa uma Turma.
+ * 
+ * @author Grupo PCS-SGBD 2017.1
+ *
+ */
+public class Turma {
+
+}

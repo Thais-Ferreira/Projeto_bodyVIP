@@ -1,0 +1,12 @@
+package br.com.body.jdbc;
+
+/**
+ * Classe responsável por cadastrar, excluir, alterar e mostrar os dados de alunos através
+ * de uma connexão com o banco de dados.
+ * 
+ * @author Thaís
+ *
+ */
+public class ProfessorDAO {
+
+}

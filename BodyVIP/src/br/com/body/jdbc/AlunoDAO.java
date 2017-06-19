@@ -125,6 +125,9 @@ public class AlunoDAO {
 		
 	}
 	
+	/**
+	 * Método que retorna um aluno a partir de sua matrícula.
+	 */
 	public Aluno buscaAluno(String matricula) {
 		Aluno aluno = null;
 		String sql = "SELECT * FROM aluno WHERE matricula = ?";
@@ -149,5 +152,24 @@ public class AlunoDAO {
 		
 		return aluno;
 	}
+	
+	public void calculaMensalidade(Aluno aluno) {
+		
+		String sql = "INSERT INTO aluno (valor_mensalidade) VALUES (?)";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setDouble(1, aluno.calculaValorMensalidade(aluno));
+			
+			preparador.execute();
+			preparador.close();
+			
+			System.out.println("Mensalidade atualizada com sucesso!");
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	} 
 	
 }

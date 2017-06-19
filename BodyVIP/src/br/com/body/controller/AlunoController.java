@@ -1,7 +1,6 @@
 package br.com.body.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -16,6 +15,8 @@ import br.com.body.jdbc.AlunoDAO;
 
 /**
  * Servlet implementation class AlunoController
+ * 
+ * @author Thaís
  */
 @WebServlet("/AlunoController")
 public class AlunoController extends HttpServlet {
