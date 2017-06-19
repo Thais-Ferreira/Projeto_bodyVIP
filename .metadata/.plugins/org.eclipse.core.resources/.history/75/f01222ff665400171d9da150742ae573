@@ -1,0 +1,109 @@
+* {margin:0; padding:0;}
+h1{font:30px Cambria, Georgia, "Times New Roman", Times, serif; color:#fff; margin:0; text-align:center}
+h2{font:25px Cambria, Georgia, "Times New Roman", Times, serif; color:#fff; margin:0; text-align:center}
+.bg{
+	background-image:url(../Imagens/BG/bgdg.jpg);
+	background-repeat:no-repeat;
+	background-position:top;
+	background-color:#000000;
+}
+
+.nav {
+	width:100%; 
+    overflow:hidden; 
+	height:354px; 
+	position: relative;
+
+}
+.nav_holder {
+	position:relative; 
+	left:50%; 
+}
+.nav_container {
+	width: 1115px;
+	height: 162px;
+	position: absolute;
+	left: -552px;
+	background: url(../Imagens/layout/navigation_bg.png)
+}
+
+.nav_int {
+	width:920px; 
+	margin:0 auto; 
+}
+.nav .logo {
+	display:block; 
+	width:322px; 
+	height:151px; 
+	float:left;
+}
+.nav .menu {
+	padding:48px 0 0 63px;
+    float:left;
+}
+.nav .menu a {
+	height:42px; 
+	background-repeat:no-repeat; 
+	display:block; 
+	float:left;
+}
+.nav .menu a:hover {
+	background-position: 
+	bottom;
+}
+
+.nav .menu a {background-image:url(../Imagens/layout/navigation-en_us.jpg) }
+.nav a.home { width:88px; background-position: 0 0; }
+.nav a.home:hover { background-position: 0 -42px; }
+.nav a.features {width:108px; background-position: -88px 0;}
+.nav a.features:hover { background-position: -88px -42px; }
+.nav a.media { width:91px; background-position: -196px  0;}
+.nav a.media:hover { background-position: -196px -42px; }
+.nav a.faq { width:74px; background-position: -287px 0;}
+.nav a.faq:hover { background-position: -287px -42px; }
+.nav a.forums { width:97px; background-position: -361px 0;}
+.nav a.forums:hover { background-position: -361px -42px; } 
+
+
+.text1 {
+	text-align:center;
+	color:#A2B6C7;
+}
+.text2 {
+	text-align:center;
+	color:#A2B6C7;
+}
+.contents_interior {padding:45px 26px 26px 11px; position:relative;}
+.contents_interior ul a{text-decoration: none;}
+.contents_interior2 {padding:45px 26px 26px 11px; position:relative; margin-bottom:50px; margin-top:50px;}
+.contents_interior2 ul a{text-decoration: none;}
+.contents_holder {width:700px; margin:0 auto;}
+.contents_holder a{color: #50BEFA; text-decoration: none}
+.leadtext {font:18px/30px Cambria, Georgia, "Times New Roman", Times, serif; color:#fff; margin:0;}
+.leadtext ul a{text-decoration: none;}
+.leadtext2 {font:17px/30px Cambria, Georgia, "Times New Roman", Times, serif; color:#fff; margin:0;}
+.leadtext2 ul a{text-decoration: none;}
+.leadtext3 {font:16px/30px Cambria, Georgia, "Times New Roman", Times, serif; color:#fff; margin:0;}
+.leadtext3 ul a{text-decoration: none;}
+.more{font:16px/25px Cambria, Georgia, "Times New Roman", Times, serif; color:#fff;text-align:right; text-decoration:none;}
+
+.ssthumb {margin:0; padding:0; width:299px; height:229px; position:relative; z-index:3;}
+.ssthumb div {height:100%;}
+.ssthumb .ssframe1 {background:url(../Imagens/Icon/ssframe1.png) 0 0 no-repeat;}
+.ssthumb .ssframe2 {background:url(../Imagens/Icon/ssframe2.png) 0 0 no-repeat;}
+.ssthumb div a {display:block; height:100%;}
+.ss-right {margin:0 0 35px 18px; float:right; clear:right;}
+.ss-left {margin:0 18px 35px 0; float:left; clear:left;}
+.ss-row {margin:35px 0 35px 20px; float:left;}
+
+
+.footercontainer { width: 100%; height: 190px; color:#666; line-height:100px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; text-align:center }	
+.footer { clear: both;  width: 650px; background-color: transparent}
+.footer a{text-decoration: none;}
+.footer .more a{text-decoration: none;}
+
+
+.ssthumb2 {margin:auto; width:280px; height:300px;float:right;display:block; margin-top:-80px}
+
+ul{h2{font:25px Cambria, Georgia, "Times New Roman", Times, serif; color:#fff; margin:0; text-align:left}
+
