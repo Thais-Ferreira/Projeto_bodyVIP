@@ -23,23 +23,23 @@ public class AlunoDAO {
 	/**
 	 * Método que cadastra um aluno no banco de dados.
 	 */
-	public void cadastroAluno(Aluno aluno) {
+	public void cadastraAluno(Aluno aluno) {
 		
-		String sql = "INSERT INTO aluno (nome,cpf,matricula,email,datamatricula) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO aluno (nome,cpf,email,matricula,data_matricula) VALUES (?,?,?,?,?)";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			
 			preparador.setString(1, aluno.getNome());
 			preparador.setString(2, aluno.getCpf());
-			preparador.setString(3, aluno.getMatricula());
-			preparador.setString(4, aluno.getEmail());
+			preparador.setString(3, aluno.getEmail());
+			preparador.setString(4, aluno.getMatricula());
 			preparador.setDate(5, aluno.getDataMatricula());
 			
 			preparador.execute();
 			preparador.close();
 			
-			System.out.println("Aluno cadastrado com sucesso!");
+			//System.out.println("Aluno cadastrado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -51,19 +51,20 @@ public class AlunoDAO {
 	 */
 	public void alteraCadastroAluno(Aluno aluno) {
 		
-		String sql = "UPDATE aluno SET nome = ?, email = ? WHERE matricula = ?";
+		String sql = "UPDATE aluno SET nome = ?, cpf = ?, email = ? WHERE matricula = ?";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			
 			preparador.setString(1, aluno.getNome());
-			preparador.setString(2, aluno.getEmail());
-			preparador.setString(3, aluno.getMatricula());
+			preparador.setString(2, aluno.getCpf());
+			preparador.setString(3, aluno.getEmail());
+			preparador.setString(4, aluno.getMatricula());
 			
 			preparador.execute();
 			preparador.close();
 			
-			System.out.println("Cadastro alterado com sucesso!");
+			//System.out.println("Cadastro alterado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -82,11 +83,10 @@ public class AlunoDAO {
 			
 			preparador.setString(1, aluno.getMatricula());
 			
-			
 			preparador.execute();
 			preparador.close();
 			
-			System.out.println("Cadastro deletado com sucesso!");
+			//System.out.println("Cadastro deletado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -110,9 +110,9 @@ public class AlunoDAO {
 				alu.setId(resultados.getInt("id"));
 				alu.setNome(resultados.getString("nome"));
 				alu.setCpf(resultados.getString("cpf"));
-				alu.setMatricula(resultados.getString("matricula"));
 				alu.setEmail(resultados.getString("email"));
-				alu.setDataMatricula(resultados.getDate("datamatricula"));
+				alu.setMatricula(resultados.getString("matricula"));
+				alu.setDataMatricula(resultados.getDate("data_matricula"));
 				
 				listaAlunos.add(alu);
 				
@@ -142,10 +142,11 @@ public class AlunoDAO {
 				aluno.setId(resultado.getInt("id"));
 				aluno.setNome(resultado.getString("nome"));
 				aluno.setCpf(resultado.getString("cpf"));
-				aluno.setMatricula(resultado.getString("matricula"));
 				aluno.setEmail(resultado.getString("email"));
+				aluno.setMatricula(resultado.getString("matricula"));
+				
 			}
-			System.out.println("Aluno encontrado com sucesso!");
+			//System.out.println("Aluno encontrado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -153,7 +154,7 @@ public class AlunoDAO {
 		return aluno;
 	}
 	
-	public void calculaMensalidade(Aluno aluno) {
+	/*public void calculaMensalidade(Aluno aluno) {
 		
 		String sql = "INSERT INTO aluno (valor_mensalidade) VALUES (?)";
 		
@@ -170,6 +171,6 @@ public class AlunoDAO {
 			System.out.println("Erro - " + e.getMessage());
 		}
 		
-	} 
+	}*/
 	
 }

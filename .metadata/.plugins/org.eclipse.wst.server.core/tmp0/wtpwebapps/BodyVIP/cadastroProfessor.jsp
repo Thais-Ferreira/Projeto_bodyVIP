@@ -12,19 +12,17 @@
     <div id="header">
       <div id="logo">
         <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1><a href="home.jsp">Body<span class="logo_colour">VIP</span></a></h1>
           <h2>Enfrente a preguiça, derrote o cansaço e supere os desafios.</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="home.jsp">Home</a></li>
-          <li class="selected"><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
+          <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
           <li><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
           <li><a href="page.html">Turmas</a></li>
-          <li><a href="ProfessorController?acao=cadastro">Cadastrar Professor</a></li>
+          <li class="selected"><a href="ProfessorController?acao=cadastro">Cadastrar Professor</a></li>
           <li><a href="ProfessorController?acao=buscaLista">Ver Professores</a></li>
         </ul>
       </div>
@@ -33,7 +31,7 @@
     <div id="site_content">
     <h1>Cadastro de Professor</h1>
     <div class="form_settings">
-    	<form action="SalvoCadastro.jsp" method="post">
+    	<form action="SalvoCadastroProf.jsp" method="post">
             <p><span>Nome</span><input class="contact" type="text" name="nome"/></p>
             <p><span>CPF</span><input class="contact" type="text" name="cpf"/></p>
             <p><span>E-mail</span><input class="contact" type="text" name="email"/></p>

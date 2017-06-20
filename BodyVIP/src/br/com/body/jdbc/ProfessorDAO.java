@@ -25,7 +25,7 @@ public class ProfessorDAO {
 	 */
 	public void cadastroProfessor(Professor professor) {
 		
-		String sql = "INSERT INTO professor (nome,cpf,email,datacontratacao) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO professor (nome,cpf,email,data_contratacao) VALUES (?,?,?,?)";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
@@ -38,7 +38,7 @@ public class ProfessorDAO {
 			preparador.execute();
 			preparador.close();
 			
-			System.out.println("Professor cadastrado com sucesso!");
+			//System.out.println("Professor cadastrado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -109,7 +109,7 @@ public class ProfessorDAO {
 				prof.setNome(resultados.getString("nome"));
 				prof.setCpf(resultados.getString("cpf"));
 				prof.setEmail(resultados.getString("email"));
-				prof.setDataContratacao(resultados.getDate("datacontratacao"));
+				prof.setDataContratacao(resultados.getDate("data_contratacao"));
 					
 				listaProfessores.add(prof);
 					

@@ -1,7 +1,6 @@
 package br.com.body.entidade;
 
 import java.sql.Date;
-import java.util.List;
 
 /**
  * Classe que representa um aluno.
@@ -14,11 +13,11 @@ public class Aluno {
 	private Integer id;
 	private String nome;
 	private String cpf;
-	private String matricula;
 	private String email;
+	private String matricula;
 	private Date dataMatricula;
-	private double valorMensalidade;
-	private List<Turma> listaTurma;
+	//private double valorMensalidade;
+	//private List<Turma> listaTurma;
 	
 	public Integer getId() {
 		return id;
@@ -43,20 +42,21 @@ public class Aluno {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getMatricula() {
-		return matricula;
-	}
 	
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getMatricula() {
+		return matricula;
+	}
+	
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
 	}
 
 	public Date getDataMatricula() {
@@ -67,7 +67,7 @@ public class Aluno {
 		this.dataMatricula = dataMatricula;
 	}
 
-	public double getValorMensalidade() {
+	/*public double getValorMensalidade() {
 		return valorMensalidade;
 	}
 
@@ -94,7 +94,7 @@ public class Aluno {
 		
 		return valorMensalidade;
 		
-	}
+	}*/
 
 
 }

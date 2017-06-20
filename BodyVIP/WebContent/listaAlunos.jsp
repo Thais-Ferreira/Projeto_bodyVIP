@@ -14,14 +14,12 @@
     <div id="header">
       <div id="logo">
         <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1><a href="home.jsp">Body<span class="logo_colour">VIP</span></a></h1>
           <h2>Enfrente a preguiça, derrote o cansaço e supere os desafios.</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="home.jsp">Home</a></li>
           <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
           <li class="selected"><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
@@ -38,8 +36,6 @@
     </div>
 </body>
 	<%
-	//List<Aluno> listaAlunos = alunoDAO.buscaListaAlunos(aluno);
-	
 	List<Aluno> listaCompleta = (List<Aluno>)request.getAttribute("listaAlunos");
 	%>
 	<div id="site_content">
@@ -56,8 +52,8 @@
 	%>
 	<tr>
 			<th><%= a.getNome() %></th>
-			<th><%= a.getMatricula() %></th>
 			<th><%= a.getEmail() %></th>
+			<th><%= a.getMatricula() %></th>
 			<th><a href="AlunoController?acao=deletaCadastro&matricula=<%= a.getMatricula() %>">Deletar</a></th>
 			<th><a href="AlunoController?acao=alteraCadastro&matricula=<%= a.getMatricula() %>">Alterar</a></th>
 	</tr>
@@ -66,7 +62,7 @@
 	%>
 	</table>
 	</div>
-	
+	<br><br><br><br>
 	<div id="content_footer"></div>
     <div id="footer">
       <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>

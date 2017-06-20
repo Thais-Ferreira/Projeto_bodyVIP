@@ -8,10 +8,47 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<title>Cadastro Salvo</title>
 </head>
 <body>
-	<jsp:include page="cabecalho.jsp"></jsp:include>
+	<div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          
+          <h1><a href="home.jsp">Body<span class="logo_colour">VIP</span></a></h1>
+          <h2>Enfrente a preguiça, derrote o cansaço e supere os desafios.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          
+          <li><a href="home.jsp">Home</a></li>
+          <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
+          <li><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
+          <li><a href="page.html">Turmas</a></li>
+          <li><a href="ProfessorController?acao=cadastro">Cadastrar Professor</a></li>
+          <li><a href="ProfessorController?acao=buscaLista">Ver Professores</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="content_header"></div>
+    <div id="site_content">
+      
+	  
+      <div id="content">
+        <h1>Salvo com sucesso!</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>
+      <p>@BodyVIP 2010 todos os direitos reservados.</p> 
+    </div>
+  </div>
 	<%
 	String nomeProf = request.getParameter("nome");
 	String cpfProf = request.getParameter("cpf");
@@ -27,8 +64,6 @@
 	ProfessorDAO professorDAO = new ProfessorDAO();
 	professorDAO.cadastroProfessor(professor);
 	%>
-	
-	<h1>Salvo com sucesso!</h1>
 
 </body>
 </html>

@@ -12,14 +12,12 @@
     <div id="header">
       <div id="logo">
         <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1><a href="home.jsp">Body<span class="logo_colour">VIP</span></a></h1>
           <h2>Enfrente a preguiça, derrote o cansaço e supere os desafios.</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="home.jsp">Home</a></li>
           <li class="selected"><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
           <li><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
@@ -33,11 +31,11 @@
     <div id="site_content">
     <h1>Cadastro de Aluno</h1>
     <div class="form_settings">
-    	<form action="SalvoCadastro.jsp" method="post">
+    	<form action="SalvoCadastroAluno.jsp" method="post">
             <p><span>Nome</span><input class="contact" type="text" name="nome"/></p>
             <p><span>CPF</span><input class="contact" type="text" name="cpf"/></p>
-            <p><span>Matrícula</span><input class="contact" type="text" name="matricula"/></p>
             <p><span>E-mail</span><input class="contact" type="text" name="email"/></p>
+            <p><span>Matrícula</span><input class="contact" type="text" name="matricula"/></p>
             <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="enviar" value="Cadastrar" /></p>
          </form>
     </div>

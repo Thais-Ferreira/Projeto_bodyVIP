@@ -57,7 +57,7 @@ public class AlunoController extends HttpServlet {
 			String matricula = request.getParameter("matricula");
 			Aluno alu = alunoDAO.buscaAluno(matricula);
 			request.setAttribute("alu", alu);
-			request.getRequestDispatcher("AlterarCadastro.jsp").forward(request, response);
+			request.getRequestDispatcher("AlterarCadastroAluno.jsp").forward(request, response);
 			
 		} else if(acao != null && acao.endsWith("cadastro")) {
 			RequestDispatcher destino = request.getRequestDispatcher("cadastroAluno.jsp");
@@ -72,12 +72,15 @@ public class AlunoController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//capturando parâmetros da tela
 		String nome = request.getParameter("nome");
-		String matricula = request.getParameter("matricula");
+		String cpf = request.getParameter("cpf");
 		String email = request.getParameter("email");
+		String matricula = request.getParameter("matricula");
+		
 		
 		//criando objeto aluno e atribuindo valores da tela
 		Aluno aluno = new Aluno();
 		aluno.setNome(nome);
+		aluno.setCpf(cpf);
 		aluno.setEmail(email);
 		aluno.setMatricula(matricula);
 		

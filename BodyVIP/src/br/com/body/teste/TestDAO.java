@@ -34,7 +34,7 @@ public class TestDAO {
 		aluno.setDataMatricula(data);
 		
 		AlunoDAO alunoDAO = new AlunoDAO();
-		alunoDAO.cadastroAluno(aluno);
+		alunoDAO.cadastraAluno(aluno);
 		
 		
 	}

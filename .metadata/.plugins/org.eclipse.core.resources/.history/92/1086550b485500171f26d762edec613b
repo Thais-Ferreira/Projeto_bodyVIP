@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastrar</title>
+<title>Altera Cadastro</title>
 </head>
 <body>
 	<jsp:include page="cabecalho.jsp"></jsp:include>
@@ -18,10 +18,13 @@
 		
 		<label>Nome:</label>
 		<input type="text" name="nome" value="<%= aluno.getNome()%>">
-		<label>Matrícula:</label>
-		<input type="text" name="matricula" value="<%= aluno.getMatricula()%>">
+		<label>CPF:</label>
+		<input type="text" name="cpf" value="<%= aluno.getCpf()%>">
 		<label>E-mail:</label>
 		<input type="text" name="email" value="<%= aluno.getEmail()%>">
+		<label>Matrícula:</label>
+		<input type="text" name="matricula" value="<%= aluno.getMatricula()%>">
+		
 		
 		<input type="submit" value="Salvar">
 	</form>

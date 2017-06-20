@@ -12,14 +12,12 @@
     <div id="header">
       <div id="logo">
         <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1><a href="home.jsp">Body<span class="logo_colour">VIP</span></a></h1>
           <h2>Enfrente a preguiça, derrote o cansaço e supere os desafios.</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="home.jsp">Home</a></li>
           <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
           <li><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
@@ -34,7 +32,6 @@
       <div id="banner"></div>
 	  
       <div id="content">
-        <!-- insert the page content here -->
         <h1>Bem vindo(a) a academia BodyVIP!</h1>
         <p>Inaugurada em 2010, a academia BodyVIP conta com mais de 250 unidades, localizadas em 22 estados brasileiros 
         e no Distrito Federal, além de presença no Chile, México, República Dominicana, Peru e Colômbia. 
