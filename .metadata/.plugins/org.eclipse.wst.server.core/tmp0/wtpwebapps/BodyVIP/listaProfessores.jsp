@@ -45,6 +45,7 @@
 			<th>NOME</th>
 			<th>CPF</th>
 			<th>E-MAIL</th>
+			<th>DATA CONTRATAÇÃO</th>
 			<th>DELETAR</th>
 			<th>ALTERAR</th>
 		</tr>
@@ -55,6 +56,7 @@
 			<th><%= p.getNome() %></th>
 			<th><%= p.getCpf() %></th>
 			<th><%= p.getEmail() %></th>
+			<th><%= p.getDataContratacao() %></th>
 			<th><a href="ProfessorController?acao=deletaCadastro&cpf=<%= p.getCpf() %>">Deletar</a></th>
 			<th><a href="ProfessorController?acao=alteraCadastro&cpf=<%= p.getCpf() %>">Alterar</a></th>
 	</tr>

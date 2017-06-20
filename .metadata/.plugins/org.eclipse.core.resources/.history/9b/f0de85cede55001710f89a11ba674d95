@@ -1,0 +1,161 @@
+package br.com.body.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.body.entidade.Professor;
+import br.com.body.entidade.Turma;
+
+/**
+ * Classe responsável por cadastrar, excluir, alterar e mostrar os dados das turmas através
+ * de uma conexão com o banco de dados.
+ * 
+ * @author Thaís
+ *
+ */
+public class TurmaDAO {
+	
+	private Connection conexao = Conexao.getConnection();
+	
+	/**
+	 * Método que cadastra uma turma no banco de dados.
+	 */
+	public void cadastraTurma(Turma turma) {
+		
+		String sql = "INSERT INTO turma (codigo,modalidade,qtd_vagas,dia_semana,horario_inicio,horario_fim,valor,cpf_professor) VALUES (?,?,?,?,?,?,?,?)";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, turma.getCodigo());
+			preparador.setString(2, turma.getModalidade());
+			preparador.setInt(3, turma.getQuantidadeVagas());
+			preparador.setString(4, turma.getDiaDaSemana());
+			preparador.setInt(5, turma.getHoraInicio());
+			preparador.setInt(6, turma.getHoraFim());
+			preparador.setDouble(7, turma.getValorTurma());
+			preparador.setString(8, turma.getCpfProfessor());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+	}
+	
+	/**
+	 * Método que altera uma turma no banco de dados.
+	 */
+	public void alteraTurma(Turma turma) {
+		
+		String sql = "UPDATE turma SET modalidade = ?, qtd_vagas = ?, dia_semana = ?, horario_inicio = ?, horario_fim = ?, valor = ?, cpf_professor = ?  WHERE codigo = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, turma.getModalidade());
+			preparador.setInt(2, turma.getQuantidadeVagas());
+			preparador.setString(3, turma.getDiaDaSemana());
+			preparador.setInt(4, turma.getHoraInicio());
+			preparador.setInt(5, turma.getHoraFim());
+			preparador.setDouble(6, turma.getValorTurma());
+			preparador.setString(7, turma.getCpfProfessor());
+			preparador.setString(8, turma.getCodigo());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+		
+	/**
+	* Método que deleta uma turma do banco de dados.
+	*/
+	public void deletaTurma(Turma turma) {
+			
+		String sql = "DELETE FROM turma WHERE codigo = ?";
+			
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+				
+			preparador.setString(1, turma.getCodigo());
+				
+			preparador.execute();
+			preparador.close();
+		
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+			
+	}
+		
+	/**
+	 * Método que retorna uma lista com as trumas cadastradas no banco de dados.
+	*/
+	public List<Turma> buscaListaTurmas(Turma turma) {
+			
+		String sql = "SELECT * FROM turma";
+		List<Turma> listaTurmas = new ArrayList<>();
+			
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			ResultSet resultados = preparador.executeQuery();
+				
+			while(resultados.next()) {
+				Turma tur = new Turma();
+				tur.setCodigo(resultados.getString("codigo"));
+				tur.setModalidade(resultados.getString("modalidade"));
+				tur.setQuantidadeVagas(resultados.getInt("qtd_vagas"));
+				tur.setDiaDaSemana(resultados.getString("dia_semana"));
+				tur.setHoraInicio(resultados.getInt("horario_inicio"));
+				tur.setHoraFim(resultados.getInt("horario_fim"));
+				tur.setValorTurma(resultados.getDouble("valor"));
+				tur.setCpfProfessor(resultados.getString("cpf_professor"));
+					
+				listaTurmas.add(tur);
+					
+			}
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+			
+		return listaProfessores;
+			
+	}
+	
+	/**
+	 * Método que retorna um professor a partir de seu cpf.
+	 */
+	public Professor buscaProfessor(String cpf) {
+		Professor professor = null;
+		String sql = "SELECT * FROM professor WHERE cpf = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			preparador.setString(1, cpf);
+			
+			ResultSet resultado = preparador.executeQuery();
+			if(resultado.next()) {
+				professor = new Professor();
+				professor.setNome(resultado.getString("nome"));
+				professor.setCpf(resultado.getString("cpf"));
+				professor.setEmail(resultado.getString("email"));
+				
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+		return professor;
+	}
+
+}

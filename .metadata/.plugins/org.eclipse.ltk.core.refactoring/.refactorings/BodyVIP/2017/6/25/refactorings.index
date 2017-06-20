@@ -23,3 +23,16 @@
 1497897592923	Rename resource 'SalvoCadastro.jsp'
 1497897806906	Encapsulate field 'email'
 1497917163108	Rename resource 'AlterarCadastro.jsp'
+1497974956850	Rename resource 'AlterarCadastroAluno.jsp'
+1497974977472	Rename resource 'AlterarCadastroProfessor.jsp'
+1497975059311	Rename resource 'SalvoCadastroAluno.jsp'
+1497975064960	Rename resource 'SalvoCadastroProf.jsp'
+1497975655532	Rename resource 'salvoCadastroProf.jsp'
+1497975705186	Rename resource 'SalvoCadastroProf.jsp'
+1497977357663	Delete element
+1497977400861	Move 'alteraCadastroAluno.jsp' to 'WebContent'
+1497978406045	Move 'alteraCadastroProf.jsp' to 'WebContent'
+1497978419608	Delete element
+1497978520503	Delete element
+1497978677298	Delete element
+1497979259699	Encapsulate field 'cpfProfessor'

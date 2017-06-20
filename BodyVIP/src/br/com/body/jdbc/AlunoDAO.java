@@ -25,13 +25,13 @@ public class AlunoDAO {
 	 */
 	public void cadastraAluno(Aluno aluno) {
 		
-		String sql = "INSERT INTO aluno (nome,cpf,email,matricula,data_matricula) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO aluno (cpf,nome,email,matricula,data_matricula) VALUES (?,?,?,?,?)";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			
-			preparador.setString(1, aluno.getNome());
-			preparador.setString(2, aluno.getCpf());
+			preparador.setString(1, aluno.getCpf());
+			preparador.setString(2, aluno.getNome());
 			preparador.setString(3, aluno.getEmail());
 			preparador.setString(4, aluno.getMatricula());
 			preparador.setDate(5, aluno.getDataMatricula());
@@ -39,7 +39,6 @@ public class AlunoDAO {
 			preparador.execute();
 			preparador.close();
 			
-			//System.out.println("Aluno cadastrado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -64,7 +63,6 @@ public class AlunoDAO {
 			preparador.execute();
 			preparador.close();
 			
-			//System.out.println("Cadastro alterado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -86,7 +84,6 @@ public class AlunoDAO {
 			preparador.execute();
 			preparador.close();
 			
-			//System.out.println("Cadastro deletado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -107,7 +104,6 @@ public class AlunoDAO {
 			
 			while(resultados.next()) {
 				Aluno alu = new Aluno();
-				alu.setId(resultados.getInt("id"));
 				alu.setNome(resultados.getString("nome"));
 				alu.setCpf(resultados.getString("cpf"));
 				alu.setEmail(resultados.getString("email"));
@@ -139,14 +135,13 @@ public class AlunoDAO {
 			ResultSet resultado = preparador.executeQuery();
 			if(resultado.next()) {
 				aluno = new Aluno();
-				aluno.setId(resultado.getInt("id"));
 				aluno.setNome(resultado.getString("nome"));
 				aluno.setCpf(resultado.getString("cpf"));
 				aluno.setEmail(resultado.getString("email"));
 				aluno.setMatricula(resultado.getString("matricula"));
 				
 			}
-			//System.out.println("Aluno encontrado com sucesso!");
+			
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}

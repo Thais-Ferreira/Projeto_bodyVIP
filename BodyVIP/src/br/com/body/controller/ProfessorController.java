@@ -56,7 +56,7 @@ public class ProfessorController extends HttpServlet {
 			String cpf = request.getParameter("cpf");
 			Professor prof = professorDAO.buscaProfessor(cpf);
 			request.setAttribute("prof", prof);
-			request.getRequestDispatcher("AlterarCadastroProfessor.jsp").forward(request, response);
+			request.getRequestDispatcher("alteraCadastroProf.jsp").forward(request, response);
 			
 		} else if(acao != null && acao.endsWith("cadastro")) {
 			RequestDispatcher destino = request.getRequestDispatcher("cadastroProfessor.jsp");
@@ -73,13 +73,13 @@ public class ProfessorController extends HttpServlet {
 		String cpf = request.getParameter("cpf");
 		String email = request.getParameter("email");
 				
-		//criando objeto aluno e atribuindo valores da tela
+		//criando objeto professor e atribuindo valores da tela
 		Professor professor = new Professor();
 		professor.setNome(nome);
 		professor.setCpf(cpf);
 		professor.setEmail(email);
 		
-		//criando um alunoDAO
+		//criando um professorDAO
 		ProfessorDAO professorDAO = new ProfessorDAO();
 				
 		//salvando no banco de dados

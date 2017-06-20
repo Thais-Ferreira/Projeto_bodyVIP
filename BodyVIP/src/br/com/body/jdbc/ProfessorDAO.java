@@ -38,7 +38,6 @@ public class ProfessorDAO {
 			preparador.execute();
 			preparador.close();
 			
-			//System.out.println("Professor cadastrado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -49,19 +48,19 @@ public class ProfessorDAO {
 	 */
 	public void alteraCadastroProfessor(Professor professor) {
 		
-		String sql = "UPDATE professor SET nome = ?, email = ? WHERE cpf = ?";
+		String sql = "UPDATE professor SET nome = ?, cpf = ?, email = ? WHERE cpf = ?";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			
 			preparador.setString(1, professor.getNome());
-			preparador.setString(2, professor.getEmail());
-			preparador.setString(3, professor.getCpf());
+			preparador.setString(2, professor.getCpf());
+			preparador.setString(3, professor.getEmail());
+			preparador.setString(4, professor.getCpf());
 			
 			preparador.execute();
 			preparador.close();
 			
-			System.out.println("Cadastro alterado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -83,8 +82,7 @@ public class ProfessorDAO {
 				
 			preparador.execute();
 			preparador.close();
-				
-			System.out.println("Cadastro deletado com sucesso!");
+		
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}
@@ -105,7 +103,6 @@ public class ProfessorDAO {
 				
 			while(resultados.next()) {
 				Professor prof = new Professor();
-				prof.setId(resultados.getInt("id"));
 				prof.setNome(resultados.getString("nome"));
 				prof.setCpf(resultados.getString("cpf"));
 				prof.setEmail(resultados.getString("email"));
@@ -136,13 +133,12 @@ public class ProfessorDAO {
 			ResultSet resultado = preparador.executeQuery();
 			if(resultado.next()) {
 				professor = new Professor();
-				professor.setId(resultado.getInt("id"));
 				professor.setNome(resultado.getString("nome"));
 				professor.setCpf(resultado.getString("cpf"));
 				professor.setEmail(resultado.getString("email"));
 				
 			}
-			System.out.println("Professor encontrado com sucesso!");
+			
 		} catch (SQLException e) {
 			System.out.println("Erro - " + e.getMessage());
 		}

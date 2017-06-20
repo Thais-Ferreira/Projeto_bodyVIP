@@ -8,7 +8,6 @@ package br.com.body.entidade;
  */
 public class Turma {
 	
-	private Integer id;
 	private String codigo;
 	private String modalidade;
 	private int quantidadeVagas;
@@ -16,15 +15,7 @@ public class Turma {
 	private int horaInicio;
 	private int horaFim;
 	private double valorTurma;
-	private Integer idProfessor;
-	
-	public Integer getId() {
-		return id;
-	}
-	
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	private String cpfProfessor;
 	
 	public String getCodigo() {
 		return codigo;
@@ -81,13 +72,13 @@ public class Turma {
 	public void setValorTurma(double valorTurma) {
 		this.valorTurma = valorTurma;
 	}
-	
-	public Integer getIdProfessor() {
-		return idProfessor;
+
+	public String getCpfProfessor() {
+		return cpfProfessor;
 	}
 
-	public void setIdProfessor(Integer idProfessor) {
-		this.idProfessor = idProfessor;
+	public void setCpfProfessor(String cpfProfessor) {
+		this.cpfProfessor = cpfProfessor;
 	}
 	
 

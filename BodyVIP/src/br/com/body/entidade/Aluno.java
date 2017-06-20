@@ -10,21 +10,20 @@ import java.sql.Date;
  */
 public class Aluno {
 	
-	private Integer id;
-	private String nome;
 	private String cpf;
+	private String nome;
 	private String email;
 	private String matricula;
 	private Date dataMatricula;
 	//private double valorMensalidade;
 	//private List<Turma> listaTurma;
 	
-	public Integer getId() {
-		return id;
+	public String getCpf() {
+		return cpf;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	
 	public String getNome() {
@@ -33,14 +32,6 @@ public class Aluno {
 	
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	
-	public String getCpf() {
-		return cpf;
-	}
-	
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 	
 	public String getEmail() {

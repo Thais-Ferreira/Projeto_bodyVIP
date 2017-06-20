@@ -31,7 +31,7 @@
     <div id="site_content">
     <h1>Cadastro de Professor</h1>
     <div class="form_settings">
-    	<form action="SalvoCadastroProf.jsp" method="post">
+    	<form action="salvaCadastroProf.jsp" method="post">
             <p><span>Nome</span><input class="contact" type="text" name="nome"/></p>
             <p><span>CPF</span><input class="contact" type="text" name="cpf"/></p>
             <p><span>E-mail</span><input class="contact" type="text" name="email"/></p>

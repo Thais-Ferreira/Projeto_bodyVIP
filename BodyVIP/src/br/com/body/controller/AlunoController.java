@@ -57,7 +57,7 @@ public class AlunoController extends HttpServlet {
 			String matricula = request.getParameter("matricula");
 			Aluno alu = alunoDAO.buscaAluno(matricula);
 			request.setAttribute("alu", alu);
-			request.getRequestDispatcher("AlterarCadastroAluno.jsp").forward(request, response);
+			request.getRequestDispatcher("alteraCadastroAluno.jsp").forward(request, response);
 			
 		} else if(acao != null && acao.endsWith("cadastro")) {
 			RequestDispatcher destino = request.getRequestDispatcher("cadastroAluno.jsp");

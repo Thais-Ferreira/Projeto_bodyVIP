@@ -42,8 +42,10 @@
 	<table bgcolor="#E7746F">
 		<tr>
 			<th>NOME</th>
-			<th>MATRÍCULA</th>
+			<th>CPF</th>
 			<th>E-MAIL</th>
+			<th>MATRÍCULA</th>
+			<th>DATA MATRÍCULA</th>
 			<th>DELETAR</th>
 			<th>ALTERAR</th>
 		</tr>
@@ -52,8 +54,10 @@
 	%>
 	<tr>
 			<th><%= a.getNome() %></th>
+			<th><%= a.getCpf() %></th>
 			<th><%= a.getEmail() %></th>
 			<th><%= a.getMatricula() %></th>
+			<th><%= a.getDataMatricula() %></th>
 			<th><a href="AlunoController?acao=deletaCadastro&matricula=<%= a.getMatricula() %>">Deletar</a></th>
 			<th><a href="AlunoController?acao=alteraCadastro&matricula=<%= a.getMatricula() %>">Alterar</a></th>
 	</tr>
