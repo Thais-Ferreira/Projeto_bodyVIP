@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="br.com.body.jdbc.ProfessorDAO"%>
+<%@page import="br.com.body.entidade.Professor"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,14 +21,26 @@
         </div>
       </div>
       <div id="menubar">
-        <ul id="menu">
+        <ul class="menu">
           <li><a href="home.jsp">Home</a></li>
-          <li><a href="AlunoController?acao=cadastro">Novo Aluno</a></li>
-          <li><a href="AlunoController?acao=buscaLista">Listar Alunos</a></li>
-          <li class="selected"><a href="TurmaController?acao=cadastro">Nova Turma</a></li>
-          <li><a href="TurmaController?acao=buscaLista">Ver Turmas</a></li>
-          <li><a href="ProfessorController?acao=cadastro">Novo Professor</a></li>
-          <li><a href="ProfessorController?acao=buscaLista">Listar Professores</a></li>
+          <li><a href="#">Alunos</a>
+          	<ul>
+          		<li><a href="AlunoController?acao=cadastro">Cadastrar</a>
+          		<li><a href="AlunoController?acao=buscaLista">Listar</a></li>
+          	</ul>
+          </li>
+          <li class="selected"><a href="#">Turmas</a>
+          	<ul>
+          		<li><a href="TurmaController?acao=cadastro">Cadastrar</a></li>
+          		<li><a href="TurmaController?acao=buscaLista">Listar</a></li>
+          	</ul>
+          </li>
+          <li><a href="#">Professores</a>
+          	<ul>
+          		<li><a href="ProfessorController?acao=cadastro">Cadastrar</a></li>
+          		<li><a href="ProfessorController?acao=buscaLista">Listar</a></li>
+          	</ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -41,6 +57,7 @@
             <p><span>Hora Término</span><input class="contact" type="text" name="termino"/></p>
             <p><span>Valor</span><input class="contact" type="text" name="valor"/></p>
             <p><span>Professor</span><input class="contact" type="text" name="professor"/></p>
+            
             <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="enviar" value="Cadastrar" /></p>
          </form>
     </div>
@@ -48,7 +65,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="TurmaController?acao=buscaLista">Ver Turmas</a> | <a href="another_page.html">Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Listar Alunos</a> | <a href="TurmaController?acao=buscaLista">Listar Turmas</a> | <a href="ProfessorController?acao=buscaLista">Listar Professores</a></p>
       <p>@BodyVIP 2010 todos os direitos reservados.</p> 
     </div>
     </div>

@@ -39,7 +39,7 @@ public class ProfessorController extends HttpServlet {
 		ProfessorDAO professorDAO = new ProfessorDAO();
 		
 		if(acao != null && acao.equals("buscaLista")) {
-			List<Professor> listaProfessores = professorDAO.buscaListaProfessores(professor);
+			List<Professor> listaProfessores = professorDAO.buscaListaProfessores();
 			
 			request.setAttribute("listaProfessores", listaProfessores);
 			RequestDispatcher destino = request.getRequestDispatcher("listaProfessores.jsp");

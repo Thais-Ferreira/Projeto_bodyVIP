@@ -92,7 +92,7 @@ public class ProfessorDAO {
 	/**
 	 * Método que retorna uma lista com os professores cadastrados no banco de dados.
 	*/
-	public List<Professor> buscaListaProfessores(Professor pofessor) {
+	public List<Professor> buscaListaProfessores() {
 			
 		String sql = "SELECT * FROM professor";
 		List<Professor> listaProfessores = new ArrayList<>();
