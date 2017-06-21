@@ -49,7 +49,7 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="TurmaController?acao=buscaLista">Ver Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>
       <p>@BodyVIP 2010 todos os direitos reservados.</p> 
     </div>
   </div>

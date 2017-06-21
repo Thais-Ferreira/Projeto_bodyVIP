@@ -13,4 +13,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.apache.tomcat.jdbc.pool.DataSource"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="br.com.body.entidade.Turma"/>
+<fullyQualifiedTypeName name="br.com.body.jdbc.TurmaDAO"/>
 </qualifiedTypeNameHistroy>

@@ -71,12 +71,12 @@ public class TurmaController extends HttpServlet {
 		//capturando parâmetros da tela
 		String codigo = request.getParameter("codigo");
 		String modalidade = request.getParameter("modalidade");
-		String quantVagas = request.getParameter("qtd_vagas");
-		String diaSemana = request.getParameter("dia_semana");
-		String horaInicio = request.getParameter("horario_inicio");
-		String horaFim = request.getParameter("horario_fim");
+		String quantVagas = request.getParameter("vagas");
+		String diaSemana = request.getParameter("semana");
+		String horaInicio = request.getParameter("inicio");
+		String horaFim = request.getParameter("termino");
 		String valor = request.getParameter("valor");
-		String cpfProf = request.getParameter("cpf_professor");
+		String cpfProf = request.getParameter("professor");
 		
 						
 		//criando objeto turma e atribuindo valores da tela

@@ -20,11 +20,12 @@
       <div id="menubar">
         <ul id="menu">
           <li><a href="home.jsp">Home</a></li>
-          <li><a href="AlunoController?acao=cadastro">Cadastrar Aluno</a></li>
-          <li><a href="AlunoController?acao=buscaLista">Ver Alunos</a></li>
-          <li><a href="page.html">Turmas</a></li>
-          <li><a href="ProfessorController?acao=cadastro">Cadastrar Professor</a></li>
-          <li><a href="ProfessorController?acao=buscaLista">Ver Professores</a></li>
+          <li><a href="AlunoController?acao=cadastro">Novo Aluno</a></li>
+          <li><a href="AlunoController?acao=buscaLista">Listar Alunos</a></li>
+          <li><a href="TurmaController?acao=cadastro">Nova Turma</a></li>
+          <li><a href="TurmaController?acao=buscaLista">Ver Turmas</a></li>
+          <li><a href="ProfessorController?acao=cadastro">Novo Professor</a></li>
+          <li><a href="ProfessorController?acao=buscaLista">Listar Professores</a></li>
         </ul>
       </div>
     </div>
@@ -51,7 +52,7 @@
     <br><br><br><br><br><br><br><br><br><br>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="another_page.html">Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>
+      <p><a href="home.jsp">Home</a> | <a href="AlunoController?acao=buscaLista">Ver Alunos</a> | <a href="TurmaController?acao=buscaLista">Ver Turmas</a> | <a href="ProfessorController?acao=buscaLista">Ver Professores</a></p>
       <p>@BodyVIP 2010 todos os direitos reservados.</p> 
     </div>
   </div>
