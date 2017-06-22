@@ -1,0 +1,85 @@
+package br.com.body.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.body.entidade.Aluno;
+import br.com.body.entidade.Turma;
+
+/**
+ * Classe responsável pelos métodos e conexão com o banco de dados.
+ * 
+ * @author Thaís
+ *
+ */
+public class AlunoTurmaDAO {
+	
+	private Connection conexao = Conexao.getConnection();
+	
+	/**
+	 * Método que insere uma dado na tabela aluno_turma.
+	 */
+	public void cadastraAlunoTurma(Aluno aluno, Turma turma) {
+		
+		String sql = "INSERT INTO aluno_turma (cpf_aluno, cod_turma) VALUES (?,?)";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, aluno.getCpf());
+			preparador.setString(2, turma.getCodigo());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+	
+	/**
+	 * Método que altera uma dado na tabela aluno_turma.
+	 */
+	public void alteraCadastroAlunoTurma(Aluno aluno, Turma turma) {
+		
+		String sql = "UPDATE aluno_turma SET  cod_turma = ? WHERE cpf_aluno = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, turma.getCodigo());
+			preparador.setString(2, aluno.getCpf());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+	
+	/**
+	 * Método que deleta uma dado na tabela aluno_turma.
+	 */
+	public void deletaCadastroAluno(Aluno aluno) {
+		
+		String sql = "DELETE FROM aluno WHERE matricula = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, aluno.getMatricula());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+
+}

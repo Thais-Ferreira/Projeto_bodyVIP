@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [22/Jun/2017:00:02:56 -0300] "GET /BodyVIP/home.jsp HTTP/1.1" 200 3287
+0:0:0:0:0:0:0:1 - - [22/Jun/2017:00:02:58 -0300] "GET /BodyVIP/AlunoTurmaController?acao=buscaLista HTTP/1.1" 200 2727
+0:0:0:0:0:0:0:1 - - [22/Jun/2017:00:03:02 -0300] "GET /BodyVIP/AlunoTurmaController?acao=alteraCadastro&cpf=77654343567 HTTP/1.1" 404 1023

@@ -41,6 +41,12 @@
           		<li><a href="ProfessorController?acao=buscaLista">Listar</a></li>
           	</ul>
           </li>
+          <li><a href="#">Aluno x Turma</a>
+          	<ul>
+          		<li><a href="AlunoTurmaController?acao=cadastro">Matricular</a></li>
+          		<li><a href="AlunoTurmaController?acao=buscaLista">Listar</a></li>
+          	</ul>
+          </li>
         </ul>
       </div>
     </div>

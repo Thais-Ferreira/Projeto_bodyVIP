@@ -29,9 +29,9 @@
           		<li><a href="AlunoController?acao=buscaLista">Listar</a></li>
           	</ul>
           </li>
-          <li class="selected"><a href="#">Turmas</a>
+          <li><a href="#">Turmas</a>
           	<ul>
-          		<li><a href="TurmaController?acao=cadastro">Cadastrar</a></li>
+          		<li class="selected"><a href="TurmaController?acao=cadastro">Cadastrar</a></li>
           		<li><a href="TurmaController?acao=buscaLista">Listar</a></li>
           	</ul>
           </li>
@@ -39,6 +39,12 @@
           	<ul>
           		<li><a href="ProfessorController?acao=cadastro">Cadastrar</a></li>
           		<li><a href="ProfessorController?acao=buscaLista">Listar</a></li>
+          	</ul>
+          </li>
+          <li><a href="#">Aluno x Turma</a>
+          	<ul>
+          		<li><a href="AlunoTurmaController?acao=cadastro">Matricular</a></li>
+          		<li><a href="AlunoTurmaController?acao=buscaLista">Listar</a></li>
           	</ul>
           </li>
         </ul>

@@ -1,0 +1,140 @@
+package br.com.body.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.body.entidade.AlunoTurma;
+/**
+ * Classe responsável pelos métodos e conexão com o banco de dados.
+ * 
+ * @author Thaís
+ *
+ */
+public class AlunoTurmaDAO {
+	
+	private Connection conexao = Conexao.getConnection();
+	
+	/**
+	 * Método que insere uma dado na tabela aluno_turma.
+	 */
+	public void cadastraAlunoTurma(AlunoTurma alunoTurma) {
+		
+		String sql = "INSERT INTO aluno_turma (cpf_aluno, cod_turma) VALUES (?,?)";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, alunoTurma.getCpfAluno());
+			preparador.setString(2, alunoTurma.getCodTurma());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+	
+	/**
+	 * Método que altera uma dado na tabela aluno_turma.
+	 */
+	public void alteraCadastroAlunoTurma(AlunoTurma alunoTurma) {
+		
+		String sql = "UPDATE aluno_turma SET  cod_turma = ? WHERE cpf_aluno = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, alunoTurma.getCodTurma());
+			preparador.setString(2, alunoTurma.getCpfAluno());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+	
+	/**
+	 * Método que deleta uma dado na tabela aluno_turma.
+	 */
+	public void deletaCadastroAlunoTurma(AlunoTurma alunoTurma) {
+		
+		String sql = "DELETE FROM aluno_turma WHERE cpf_aluno = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			
+			preparador.setString(1, alunoTurma.getCpfAluno());
+			
+			preparador.execute();
+			preparador.close();
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+	}
+	
+	/**
+	 * Método que retorna uma lista com os dados da tabela aluno_turma.
+	 */
+	public List<AlunoTurma> buscaListaAlunoTurma(AlunoTurma alunoTurma) {
+		
+		String sql = "SELECT * FROM aluno_turma";
+		List<AlunoTurma> lista = new ArrayList<>();
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			ResultSet resultados = preparador.executeQuery();
+			
+			while(resultados.next()) {
+				AlunoTurma alu = new AlunoTurma();
+				alu.setCpfAluno(resultados.getString("cpf_aluno"));
+				alu.setCodTurma(resultados.getString("cod_turma"));
+				
+				lista.add(alu);
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+		return lista;
+		
+	}
+	
+	/**
+	 * Método que retorna um dado da tabela aluno_turma a partir do cpf do aluno.
+	 */
+	public AlunoTurma buscaAlunoTurma(String cpf) {
+		AlunoTurma alunoTurma = null;
+		String sql = "SELECT * FROM aluno_turma WHERE cpf_aluno = ?";
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			preparador.setString(1, cpf);
+			
+			ResultSet resultado = preparador.executeQuery();
+			if(resultado.next()) {
+				alunoTurma = new AlunoTurma();
+				alunoTurma.setCpfAluno(resultado.getString("cpf_sluno"));
+				alunoTurma.setCodTurma(resultado.getString("cod_turma"));
+				
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+		return alunoTurma;
+	}
+
+}

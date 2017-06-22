@@ -32,10 +32,16 @@
           		<li><a href="TurmaController?acao=buscaLista">Listar</a></li>
           	</ul>
           </li>
-          <li class="selected"><a href="#">Professores</a>
+          <li><a href="#">Professores</a>
           	<ul>
           		<li><a href="ProfessorController?acao=cadastro">Cadastrar</a></li>
           		<li><a href="ProfessorController?acao=buscaLista">Listar</a></li>
+          	</ul>
+          </li>
+          <li><a href="#">Aluno x Turma</a>
+          	<ul>
+          		<li><a href="AlunoTurmaController?acao=cadastro">Matricular</a></li>
+          		<li><a href="AlunoTurmaController?acao=buscaLista">Listar</a></li>
           	</ul>
           </li>
         </ul>

@@ -1,0 +1,11 @@
+package br.com.body.jdbc;
+
+/**
+ * Classe responsável pelos métodos e conexão com o banco de dados.
+ * 
+ * @author Thaís
+ *
+ */
+public class AlunoTurma {
+
+}
