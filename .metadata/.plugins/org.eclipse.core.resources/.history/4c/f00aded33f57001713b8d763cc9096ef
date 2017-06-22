@@ -41,11 +41,11 @@ public class AlunoTurmaDAO {
 	}
 	
 	/**
-	 * Método que altera um dado na tabela aluno_turma.
+	 * Método que altera uma dado na tabela aluno_turma.
 	 */
 	public void alteraCadastroAlunoTurma(AlunoTurma alunoTurma) {
 		
-		String sql = "UPDATE aluno_turma SET cod_turma = ? WHERE cpf_aluno = ?";
+		String sql = "UPDATE aluno_turma SET  cod_turma = ? WHERE cpf_aluno = ?";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
@@ -125,7 +125,7 @@ public class AlunoTurmaDAO {
 			ResultSet resultado = preparador.executeQuery();
 			if(resultado.next()) {
 				alunoTurma = new AlunoTurma();
-				alunoTurma.setCpfAluno(resultado.getString("cpf_aluno"));
+				alunoTurma.setCpfAluno(resultado.getString("cpf_sluno"));
 				alunoTurma.setCodTurma(resultado.getString("cod_turma"));
 				
 			}

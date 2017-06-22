@@ -125,7 +125,7 @@ public class AlunoTurmaDAO {
 			ResultSet resultado = preparador.executeQuery();
 			if(resultado.next()) {
 				alunoTurma = new AlunoTurma();
-				alunoTurma.setCpfAluno(resultado.getString("cpf_aluno"));
+				alunoTurma.setCpfAluno(resultado.getString("cpf_sluno"));
 				alunoTurma.setCodTurma(resultado.getString("cod_turma"));
 				
 			}

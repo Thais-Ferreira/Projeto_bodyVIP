@@ -54,7 +54,7 @@ public class AlunoTurmaController extends HttpServlet {
 			String cpf = request.getParameter("cpf");
 			AlunoTurma alutu = alunoTurmaDAO.buscaAlunoTurma(cpf);
 			request.setAttribute("alutu", alutu);
-			request.getRequestDispatcher("alteraCadastroAluTur.jsp").forward(request, response);
+			request.getRequestDispatcher("alteraCadastroAlunoTurma.jsp").forward(request, response);
 			
 		} else if(acao != null && acao.endsWith("cadastro")) {
 			RequestDispatcher destino = request.getRequestDispatcher("cadastroAlunoTurma.jsp");
